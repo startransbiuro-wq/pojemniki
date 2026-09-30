@@ -190,13 +190,12 @@ label.l textarea{min-height:70px;resize:vertical}
    i uzupełnij adres oraz klucz "anon" (Project Settings → API).
    ===================================================================== */
 const CONFIG = {
-  backend: 'local',           // 'local' = dane w przeglądarce | 'supabase' = baza w chmurze
-  supabaseUrl: '',            // np. https://abcd1234.supabase.co
-  supabaseAnonKey: '',        // klucz publiczny "anon"
-  gusFunctionUrl: '',         // np. https://abcd1234.supabase.co/functions/v1/gus-lookup
-  appUrl: ''                  // publiczny adres aplikacji (do linków kierowców); puste = bieżący adres
+  backend: 'supabase',
+  supabaseUrl: 'https://ynzgrlqqvegsttkmqwbi.supabase.co',
+  supabaseAnonKey: 'sb_publishable_gPs3oxSOCSJ5w6Qe-szePw_auQjD6qX',
+  gusFunctionUrl: 'https://ynzgrlqqvegsttkmqwbi.supabase.co/functions/v1/gus-lookup',
+  appUrl: 'https://startransbiuro-wq.github.io/pojemniki/'
 };
-
 /* =====================================================================
    WARSTWA DANYCH
    Cała aplikacja korzysta wyłącznie z obiektu `db` (list/get/insert/update/
