@@ -2320,8 +2320,8 @@ function contractorForm(c){
     try {
       const r = await lookupNip(f.elements.nip.value);
       ['name', 'street', 'postal_code', 'city', 'regon'].forEach(k => { if (r[k]) f.elements[k].value = r[k]; });
-      f.elements.nip.value = r.nip || f.elements.nip.value;
-      msg.style.color = 'var(--green)'; msg.textContent = 'Dane pobrane. Sprawdź adres przed zapisaniem.';
+      f.elements.nip.value = String(r.nip || f.elements.nip.value).replace(/\D/g, '');
+      msg.style.color = 'var(--green)'; msg.textContent = `Dane pobrane${r.source === 'gus' ? ' z GUS' : r.source === 'mf' ? ' z Wykazu podatników VAT (MF)' : ''}. Sprawdź adres przed zapisaniem.`;
     } catch(e){ msg.style.color = 'var(--red)'; msg.textContent = e.message; }
   };
 }
